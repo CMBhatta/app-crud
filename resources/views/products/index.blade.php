@@ -7,6 +7,11 @@
 </head>
 <body>
     <h1>Product</h1>
+    @if(session()->has('success'))
+    <div>
+        {{session('success')}}
+    </div>
+    @endif
     <div>
         <table border="1">
             <tr>
