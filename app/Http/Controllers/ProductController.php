@@ -8,7 +8,8 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function index(){
-        return view('products.index');
+        $products = product::all();
+        return view('products.index',['products'=>$products]);
     }
     public function create(){
         return view('products.create');
@@ -17,7 +18,7 @@ class ProductController extends Controller
        $data = $request-> validate([
         'name'=>'required',
         'qty'=>'required|numeric',
-        'price'=>'required|decimal:2',
+        'price'=>'required|decimal:0,2',
         'description' => 'nullable'
        ]);
        $newProduct = Product:: create($data);
