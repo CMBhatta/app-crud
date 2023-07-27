@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Edit the product</h1>
+    
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -16,7 +17,7 @@
         </ul>
     </div>
 @endif
-    <form method="put" action="{{route('product.update', ['product' => $product])}}">
+    <form method="POST" action="{{route('product.update', ['product' => $product])}}">
     @csrf
     @method('put')
         <div>

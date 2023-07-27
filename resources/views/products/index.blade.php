@@ -6,13 +6,17 @@
     <title>Crud</title>
 </head>
 <body>
-    <h1>Product</h1>
+    <h1>Product</h1> 
+
     @if(session()->has('success'))
     <div>
         {{session('success')}}
     </div>
     @endif
     <div>
+        <div>
+            <a href="{{route('product.create')}}">Add new product</a>
+        </div>
         <table border="1">
             <tr>
                 <th>ID</th>
