@@ -43,4 +43,10 @@ class ProductController extends Controller
         return redirect(route('product.index'))->with('success','Product Deleted Successfully');
 
     }
+    public function upload(Request $request){
+        $fileName = time()."-cm.".$request->file('image')->getClientOriginalExtension();
+        echo $fileName;
+        die;
+       echo $request->file('image')->storeAs('uploads', $fileName);
+    }
 }
