@@ -14,4 +14,8 @@ class Product extends Model
         'price',
         'description'
     ];
+
+    public function setNameAttribute($value){
+        $this->attributes['name'] = ucwords($value);
+    }
 }
